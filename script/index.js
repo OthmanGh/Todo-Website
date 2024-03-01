@@ -10,7 +10,7 @@ const newTodo = document.getElementById('todo-submit');
 const removeBtn = document.getElementById('remove-btn');
 const todosContainer = document.getElementById('todos-section');
 
-const todos = [];
+let todos = [];
 
 const credentials = {
   username: 'AdminSEF123',
@@ -72,9 +72,20 @@ function AddUsersTodoItem(e) {
 
   newTodo.value = '';
   todos.push(task);
+
+  console.log(todos);
   renderTodos();
+}
+
+function removeTodoItem(e) {
+  if (e.target.classList.contains('remove-btn')) {
+    const item = e.target.closest('.item');
+    todos = todos.filter((task) => task.id !== parseInt(item.id));
+    renderTodos();
+  }
 }
 
 // Event Listeners :
 loginBtn.addEventListener('click', login);
 todoForm.addEventListener('submit', AddUsersTodoItem);
+todosContainer.addEventListener('click', removeTodoItem);

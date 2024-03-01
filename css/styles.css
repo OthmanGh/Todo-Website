@@ -97,6 +97,8 @@ body {
 .todo-app h1 {
   font-weight: bold;
   font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
 }
 
 .logo-img {
