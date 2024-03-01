@@ -34,6 +34,8 @@ function renderTodos() {
   todos.forEach((task) => {
     todosContainer.innerHTML += todo(task);
   });
+
+  saveTodosToLocalStorage();
 }
 
 function login(e) {
@@ -70,8 +72,6 @@ function AddUsersTodoItem(e) {
 
   newTodo.value = '';
   todos.push(task);
-
-  console.log(todos);
   renderTodos();
 }
 
@@ -82,6 +82,20 @@ function removeTodoItem(e) {
     renderTodos();
   }
 }
+
+function saveTodosToLocalStorage() {
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+//Retrieving Todos from Local Storage on Page Load:
+document.addEventListener('DOMContentLoaded', function () {
+  const storedTodos = JSON.parse(localStorage.getItem('todos'));
+
+  if (storedTodos) {
+    todos = storedTodos;
+    renderTodos();
+  }
+});
 
 // Event Listeners :
 loginBtn.addEventListener('click', login);
