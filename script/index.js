@@ -9,15 +9,13 @@ const todoForm = document.getElementById('todo-form');
 const newTodo = document.getElementById('todo-submit');
 const removeBtn = document.getElementById('remove-btn');
 const todosContainer = document.getElementById('todos-section');
-
-let todos = [];
-
 const credentials = {
   username: 'AdminSEF123',
   password: 'SeF@ctORy$$456',
 };
 
-// Functions :
+let todos = [];
+
 function inputsReset() {
   userName.value = '';
   userEmail.value = '';

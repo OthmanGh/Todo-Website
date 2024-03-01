@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo Website</title>
 
-    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/common/utilities.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
 
     <script src="./script/index.js" defer></script>
   </head>
 
   <body>
     <div class="active" id="login-form">
-      <form class="login-container flex column small-gap">
+      <form class="login-container flex column medium-gap mini-border-radius">
         <div>
-          <h1 class="login-title">Welcome</h1>
-          <p>Login To Display Your Todos</p>
+          <h1 class="login-title">Login</h1>
         </div>
 
         <div>
           <label for="user-name">User Name:</label>
-          <input value="AdminSEF123" id="user-name" name="user-name" type="text" required />
+          <input id="user-name" name="user-name" placeholder="User Name" type="text" value="AdminSEF123" required />
         </div>
 
         <div>
           <label for="user-email">Email:</label>
-          <input value="SeF@ctORy$$456" id="user-email" name="user-email" type="text" required />
+          <input id="user-email" name="user-email" placeholder="User Email" type="text" value="SeF@ctORy$$456" required />
         </div>
 
         <button id="login-btn" type="submit">login</button>
@@ -44,7 +43,7 @@
           <form id="todo-form" class="todo-form"><input id="todo-submit" type="text" class="mini-border-radius" placeholder="Create new todo" /></form>
         </header>
 
-        <section id="todos-section" class="todos-section"></section>
+        <section id="todos-section" class="todos-section mini-border-radius"></section>
       </main>
     </div>
   </body>

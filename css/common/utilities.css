@@ -16,15 +16,15 @@
 }
 
 .small-gap {
-  gap: 30px;
+  gap: 3rem;
 }
 
 .medium-gap {
-  gap: 50px;
+  gap: 5rem;
 }
 
 .large-gap {
-  gap: 70px;
+  gap: 7rem;
 }
 
 .space-between {
@@ -35,18 +35,10 @@
   align-items: center;
 }
 
-.grid {
-  display: grid;
-}
-
-.column-1 {
-  grid-template-columns: 1fr;
-}
-
-.column-2 {
-  grid-template-columns: repeat(2, 1fr);
+.space-center {
+  justify-content: center;
 }
 
 .mini-border-radius {
-  border-radius: 6px;
+  border-radius: 8px;
 }

@@ -20,7 +20,7 @@ button {
 }
 
 :root {
-  --primary-clr-: #20304c;
+  --primary-clr-: #19273f;
   --white-clr-: #fff;
   --gray-clr-: rgb(134, 133, 133);
   --green-dark-clr: #fefefe;
@@ -31,50 +31,59 @@ body {
   min-height: 100vh;
   background: linear-gradient(45deg, #141e30, #243b55);
   font-family: 'Inter', sans-serif;
-  position: relative;
+  margin: auto 20px;
 }
 
-/*********************************/
-
-/* Login Container*/
 .login-container {
-  background-color: var(--white-clr-);
-  color: var(--primary-clr-);
-  font-weight: bold;
-  padding: 40px;
-  border-radius: 4px;
-  max-width: 600px;
-  min-width: 250px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: rgba(26, 25, 27, 0.7);
+  max-width: 60rem;
+  min-width: 25rem;
+  padding: 30px;
+  margin: 250px auto; /* Center horizontally and vertically */
+  color: rgb(13, 212, 212);
 }
 
-.login-container h1 {
-  margin-bottom: 10px;
-  font-family: 'Rubik', sans-serif;
+.login-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 4rem;
 }
 
 .login-container label {
-  margin-bottom: 5px;
-  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 2.2rem;
+  font-weight: 500;
 }
 
-.login-container input {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--primary-clr-);
+.login-container input,
+.login-container button {
+  padding: 1rem 1.5rem;
+  font-size: 2.4rem;
+}
+
+.login-container input::placeholder {
+  font-size: 1.9rem;
+}
+
+.login-container input:focus {
+  outline: none;
 }
 
 .login-container button {
-  background-color: var(--primary-clr-);
-  color: var(--white-clr-);
+  font-weight: bold;
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 4px;
+  margin-top: 30px;
+  transition: all 0.3s ease-in-out;
 }
 
-/*********************************/
+.login-container button:hover {
+  background-color: #ffffffd1;
+}
+
+.login-container button:active {
+  transform: scale(0.97);
+}
+
 .hidden {
   display: none;
 }
@@ -83,15 +92,12 @@ body {
   display: block;
 }
 
-/**********************/
-/* Todo App */
-
 .todo-app {
-  max-width: 800px;
-  width: 700px;
-  min-width: 300px;
+  display: grid;
+  align-items: center;
+  max-width: 70rem;
   color: var(--green-dark-clr);
-  margin: 150px auto;
+  margin: 100px auto;
 }
 
 .todo-app h1 {
@@ -102,7 +108,7 @@ body {
 }
 
 .logo-img {
-  width: 60px;
+  width: 6rem;
   background-color: transparent;
 }
 
@@ -112,7 +118,7 @@ body {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 80px;
+  margin-bottom: 8rem;
 }
 
 .todo-app input::placeholder {
@@ -130,12 +136,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #62159a;
-  padding: 20px 50px;
+  background-color: rgba(26, 25, 27, 0.7);
+  padding: 2rem 5rem;
+  border-radius: 0;
+}
+
+.todos-section {
+  overflow: hidden;
 }
 
 .item button {
-  width: 30px;
+  width: 3rem;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .item > p {
@@ -145,24 +158,86 @@ body {
 input[type='checkbox'] {
   margin: 0;
   padding: 0;
-  height: 30px;
-  width: 30px;
+  height: 3rem;
+  width: 3rem;
 }
 
 /**************************/
 
-/* login container media queries*/
 @media (max-width: 520px) {
+  body {
+    margin: 0 5vw; /* Keep margin on the sides */
+  }
+
+  /* Adjustments for .login-container */
+  .login-container {
+    gap: 3rem;
+    padding: 20px;
+    margin: 50px auto; /* Adjust margin if necessary */
+  }
+
   .login-container h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .login-container p {
     font-size: 1.3rem;
   }
 
-  .login-container label,
-  .login-container input {
-    font-size: 1.4rem;
+  .login-container input,
+  .login-container button {
+    padding: 0.7rem 1rem;
+    font-size: 1.8rem;
+  }
+
+  .login-container button {
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  /* Adjustments for .todo-app */
+  .todo-app {
+    gap: 3rem;
+    padding: 20px;
+    margin: 50px auto; /* Adjust margin if necessary */
+  }
+
+  .todo-app h1 {
+    font-size: 3rem;
+  }
+
+  .todo-app input {
+    font-size: 2rem;
+  }
+
+  .todo-app input::placeholder {
+    font-size: 2rem;
+  }
+
+  .todo-app input[type='checkbox'] {
+    margin-bottom: 0;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  /* Adjustments for .item */
+  .item button {
+    width: 2rem;
+  }
+
+  .item > p {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .item {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .todo-app input::placeholder {
+    font-size: 1.6rem;
   }
 }
