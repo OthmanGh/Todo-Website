@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border: none;
 }
 
 html {
@@ -18,25 +19,19 @@ button {
   width: 100%;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-}
-
 :root {
-  --primary-clr-: ##203a43;
+  --primary-clr-: #20304c;
   --white-clr-: #fff;
+  --gray-clr-: rgb(134, 133, 133);
+  --green-dark-clr: #fefefe;
 }
 
 body {
   font-size: 1.6rem;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: linear-gradient(45deg, #111d21, #203a43);
+  background: linear-gradient(45deg, #141e30, #243b55);
   font-family: 'Inter', sans-serif;
+  position: relative;
 }
 
 /*********************************/
@@ -49,6 +44,11 @@ body {
   padding: 40px;
   border-radius: 4px;
   max-width: 600px;
+  min-width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .login-container h1 {
@@ -63,10 +63,11 @@ body {
 
 .login-container input {
   padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-clr-);
 }
 
 .login-container button {
-  background-color: #203a43;
+  background-color: var(--primary-clr-);
   color: var(--white-clr-);
   cursor: pointer;
   padding: 10px 20px;
@@ -74,3 +75,92 @@ body {
 }
 
 /*********************************/
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+/**********************/
+/* Todo App */
+
+.todo-app {
+  max-width: 800px;
+  width: 700px;
+  min-width: 300px;
+  color: var(--green-dark-clr);
+  margin: 150px auto;
+}
+
+.todo-app h1 {
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.logo-img {
+  width: 60px;
+  background-color: transparent;
+}
+
+.todo-app input {
+  padding: 2rem 1.5rem;
+  background-color: var(--green-dark-clr);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 80px;
+}
+
+.todo-app input::placeholder {
+  color: #20304c;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.todo-app input:focus {
+  outline: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #62159a;
+  padding: 20px 50px;
+}
+
+.item button {
+  width: 30px;
+}
+
+.item > p {
+  font-size: 2.2rem;
+}
+
+input[type='checkbox'] {
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+}
+
+/**************************/
+
+/* login container media queries*/
+@media (max-width: 520px) {
+  .login-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .login-container p {
+    font-size: 1.3rem;
+  }
+
+  .login-container label,
+  .login-container input {
+    font-size: 1.4rem;
+  }
+}

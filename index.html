@@ -7,30 +7,45 @@
 
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/common/utilities.css" />
+
+    <script src="./script/index.js" defer></script>
   </head>
 
   <body>
-    <form class="login-container flex column gap active">
-      <div>
-        <h1 class="login-title">Welcome</h1>
-        <p>Login To Display Your Todo List</p>
-      </div>
+    <div class="active" id="login-form">
+      <form class="login-container flex column small-gap">
+        <div>
+          <h1 class="login-title">Welcome</h1>
+          <p>Login To Display Your Todos</p>
+        </div>
 
-      <div>
-        <label for="user-name">User Name:</label>
-        <input id="user-name" name="user-name" type="text" required />
-      </div>
+        <div>
+          <label for="user-name">User Name:</label>
+          <input value="AdminSEF123" id="user-name" name="user-name" type="text" required />
+        </div>
 
-      <div>
-        <label for="user-email">Email:</label>
-        <input id="user-email" name="user-email" type="email" required />
-      </div>
+        <div>
+          <label for="user-email">Email:</label>
+          <input value="SeF@ctORy$$456" id="user-email" name="user-email" type="text" required />
+        </div>
 
-      <button id="login-btn" type="submit">login</button>
-    </form>
+        <button id="login-btn" type="submit">login</button>
+      </form>
+    </div>
 
-    <main class="todo-app">
-      <header></header>
-    </main>
+    <div class="hidden" id="todo-app-container">
+      <main class="todo-app">
+        <header class="flex column medium-gap">
+          <div class="flex space-between align-center">
+            <h1>Todo</h1>
+            <img class="logo-img" src="./assets/img/logo.svg" alt="logo icon" />
+          </div>
+
+          <form id="todo-form" class="todo-form"><input id="todo-submit" type="text" class="mini-border-radius" placeholder="Create new todo" /></form>
+        </header>
+
+        <section id="todos-section" class="todos-section"></section>
+      </main>
+    </div>
   </body>
 </html>

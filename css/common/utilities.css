@@ -6,11 +6,47 @@
   flex-direction: column;
 }
 
+.row {
+  flex-direction: row;
+}
+
 .center {
   align-items: center;
   justify-content: center;
 }
 
-.gap {
+.small-gap {
   gap: 30px;
+}
+
+.medium-gap {
+  gap: 50px;
+}
+
+.large-gap {
+  gap: 70px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.column-1 {
+  grid-template-columns: 1fr;
+}
+
+.column-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mini-border-radius {
+  border-radius: 6px;
 }
